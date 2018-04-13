@@ -4,11 +4,8 @@ import { connect } from 'react-redux';
 export function connectSuspense(coroutine) {
   class SuspenseContainer extends Component {
     componentDidCatch(effect) {
-      if (effect instanceof Promise) {
-        // TODO: implement me
-      } else {
-        throw effect;
-      }
+      // Rethrow if an effect is not of expected type
+      if (!(effect instanceof Promise)) throw effect;
     }
 
     render() {
