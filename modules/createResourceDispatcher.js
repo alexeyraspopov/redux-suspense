@@ -1,5 +1,5 @@
 export function createResourceDispatcher(stateMapper, actionDispatcher, shouldDispatch = isNullable) {
-  function load(state, dispatch, ...variables) {
+  function read(state, dispatch, ...variables) {
     let results = stateMapper(state, ...variables);
 
     if (shouldDispatch(results)) {
@@ -9,7 +9,7 @@ export function createResourceDispatcher(stateMapper, actionDispatcher, shouldDi
     return results;
   }
 
-  return { load };
+  return { read };
 }
 
 function isNullable(value) {
