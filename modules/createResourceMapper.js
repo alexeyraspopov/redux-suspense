@@ -1,4 +1,4 @@
-export function createResourceDispatcher(stateMapper, actionDispatcher, shouldDispatch = isNullable) {
+export function createResourceMapper(stateMapper, actionDispatcher, shouldDispatch = isNullable) {
   function read(state, dispatch, ...variables) {
     let results = stateMapper(state, ...variables);
 
