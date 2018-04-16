@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers';
+import configureStore from './configureStore';
 import StargazerListContainer from './StargazerListContainer.react';
 
-let store = createStore(rootReducer);
+let store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
