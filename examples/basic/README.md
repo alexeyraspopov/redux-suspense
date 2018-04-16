@@ -4,6 +4,10 @@ Run the example:
 
     npm start
 
+Run the tests:
+
+    npm test
+
 Code to read:
 
  * [`StargazerListContainer.react.js`](./modules/StargazerListContainer.react.js)

@@ -10,7 +10,8 @@
     "redux-suspense": "^0.0.1"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
