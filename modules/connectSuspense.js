@@ -2,14 +2,26 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 
 export function connectSuspense(coroutine) {
-  class SuspenseContainer extends Component {
-    componentDidCatch(effect) {
-      // Rethrow if an effect is not of expected type
-      if (!(effect instanceof Promise)) throw effect;
+  class Suspense extends Component {
+    constructor(props) {
+      super(props);
+      this.state = { pending: false };
     }
 
     render() {
-      return coroutine(this.props);
+      if (this.state.pending) {
+        return null;
+      }
+
+      try {
+        return coroutine(this.props);
+      } catch (effect) {
+        if (effect instanceof Promise) {
+          Promise.resolve().then(() => this.setState({ pending: true }));
+          effect.then(() => this.setState({ pending: false }));
+        }
+        return null;
+      }
     }
   }
 
