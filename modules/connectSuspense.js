@@ -13,5 +13,5 @@ export function connectSuspense(coroutine) {
     }
   }
 
-  return connect()(SuspenseContainer);
+  return connect(state => ({ state }))(Suspense);
 }
