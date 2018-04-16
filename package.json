@@ -1,7 +1,11 @@
 {
   "name": "redux-suspense",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "build/redux-suspense.js",
+  "files": [
+    "build/",
+    "LICENSE"
+  ],
   "repository": "alexeyraspopov/redux-suspense",
   "author": "Alexey Raspopov",
   "license": "MIT",
