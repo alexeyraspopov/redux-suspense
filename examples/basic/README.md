@@ -10,7 +10,7 @@ Run the tests:
 
 Code to read:
 
- * [`StargazerListContainer.react.js`](./modules/StargazerListContainer.react.js)
- * [`stargazersResource.js`](./modules/stargazersResource.js)
- * [`stargazersFetcher.js`](./modules/stargazersFetcher.js)
- * [`reducers.js`](./modules/reducers.js)
+ * [`StargazerListContainer.react.js`](./src/StargazerListContainer.react.js)
+ * [`stargazersResource.js`](./src/stargazersResource.js)
+ * [`stargazersFetcher.js`](./src/stargazersFetcher.js)
+ * [`reducers.js`](./src/reducers.js)
