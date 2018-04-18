@@ -1,4 +1,4 @@
-# redux-suspense
+# Redux Suspense
 
     npm install redux-suspense
 
