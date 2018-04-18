@@ -17,7 +17,9 @@ necessary data available in store.
 
 The important part of the mechanism is that developers do not need to specify
 such logic in `componentDidMount()` explicitly as it is needed now. However,
-the top-level logic remains the same.
+the top-level logic remains the same. Current implementation hides this aspect
+from developers so it can be done in the most efficient way and updated with
+newer versions of React without forcing developers to refactor existing code.
 
 ## API
 
