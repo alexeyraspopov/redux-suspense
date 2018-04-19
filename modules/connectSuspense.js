@@ -1,29 +1,34 @@
-import { Component } from 'react';
+import Placeholder, { PlaceholderContext } from '../components/Placeholder';
 import { connect } from 'react-redux';
 
-export function connectSuspense(coroutine) {
-  class Suspense extends Component {
-    constructor(props) {
-      super(props);
-      this.state = { pending: false };
-    }
+export default function connectSuspense(coroutine) {
+  function SuspenseWrapper(props) {
+    return (
+      <PlaceholderContext.Consumer>
+        {(trigger) => {
+          if (!trigger) {
+            return (
+              <Placeholder ms={0} fallback={null}>
+                <SuspenseWrapper {...props} />
+              </Placeholder>
+            );
+          }
 
-    render() {
-      if (this.state.pending) {
-        return null;
-      }
-
-      try {
-        return coroutine(this.props);
-      } catch (effect) {
-        if (effect instanceof Promise) {
-          Promise.resolve().then(() => this.setState({ pending: true }));
-          effect.then(() => this.setState({ pending: false }));
-        }
-        return null;
-      }
-    }
+          try {
+            return coroutine(props);
+          } catch (effect) {
+            if (effect instanceof Promise) {
+              trigger(true);
+              effect.then(() => trigger(false));
+            } else {
+              throw effect;
+            }
+            return null;
+          }
+        }}
+      </PlaceholderContext.Consumer>
+    );
   }
 
-  return connect(state => ({ state }))(Suspense);
+  return connect(state => ({ state }))(SuspenseWrapper);
 }
