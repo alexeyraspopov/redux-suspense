@@ -19,7 +19,7 @@ export default function connectSuspense(coroutine) {
           } catch (effect) {
             if (effect instanceof Promise) {
               trigger(true);
-              effect.then(() => trigger(false));
+              effect.then(() => trigger(false), () => trigger(false));
             } else {
               throw effect;
             }
