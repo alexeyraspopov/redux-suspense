@@ -1,7 +1,8 @@
-import Placeholder, { PlaceholderContext } from '../components/Placeholder';
+import React from 'react';
+import { Placeholder, PlaceholderContext } from './Placeholder';
 import { connect } from 'react-redux';
 
-export default function connectSuspense(coroutine) {
+export function connectSuspense(coroutine) {
   function SuspenseWrapper(props) {
     return (
       <PlaceholderContext.Consumer>

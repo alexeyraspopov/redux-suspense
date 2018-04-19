@@ -2,10 +2,14 @@ import React, { Component, createContext } from 'react';
 
 export let PlaceholderContext = createContext();
 
-export default class Placeholder extends Component {
-  state = { timer: null, expired: false };
+export class Placeholder extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { timer: null, expired: false };
+    this.trigger = this.trigger.bind(this);
+  }
 
-  trigger = shouldSetTimer => {
+  trigger(shouldSetTimer) {
     if (this.state.timer) {
       clearTimeout(this.state.timer);
     }
@@ -19,7 +23,7 @@ export default class Placeholder extends Component {
     } else {
       this.setState({ timer: null, expired: false });
     }
-  };
+  }
 
   render() {
     return (
