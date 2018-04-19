@@ -5,6 +5,7 @@ let babelConfig = {
   babelrc: false,
   presets: [
     ['env', { modules: false }],
+    'react',
   ],
   plugins: ['external-helpers'],
 };
