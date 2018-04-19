@@ -9,7 +9,7 @@ export function connectSuspense(coroutine) {
         {(trigger) => {
           if (!trigger) {
             return (
-              <Placeholder ms={0} fallback={null}>
+              <Placeholder delayMs={0} fallback={null}>
                 <SuspenseWrapper {...props} />
               </Placeholder>
             );
