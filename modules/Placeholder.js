@@ -5,7 +5,7 @@ export let PlaceholderContext = createContext();
 export class Placeholder extends Component {
   constructor(props) {
     super(props);
-    this.state = { timer: null, expired: false };
+    this.state = { timer: null, expired: props.delayMs === 0 };
     this.trigger = this.trigger.bind(this);
   }
 
