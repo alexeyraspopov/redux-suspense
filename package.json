@@ -1,6 +1,6 @@
 {
   "name": "redux-suspense",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "build/redux-suspense.js",
   "files": [
     "build/",
