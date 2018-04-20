@@ -19,7 +19,7 @@ export class Placeholder extends Component {
         this.setState({ timer: null, expired: true, cache: null });
       }, this.props.delayMs);
 
-      this.setState(state => ({ timer, cache: state.cache }));
+      this.setState({ timer });
     } else {
       this.setState({ timer: null, expired: false, cache: this.props.children });
     }
