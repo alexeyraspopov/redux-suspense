@@ -21,8 +21,8 @@ the top-level logic remains the same. Current implementation hides this aspect
 from developers so it can be done in the most efficient way and updated with
 newer versions of React without forcing developers to refactor existing code.
 
-**Note:** this project is an experiment. I encourage you to try, though
-carefully consider undiscovered bugs before using in your real projects.
+_Note: this project is an experiment. I encourage you to try, though
+carefully consider undiscovered bugs before using in your real projects._
 
 ## API
 
