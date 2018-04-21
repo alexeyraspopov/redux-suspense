@@ -40,3 +40,14 @@ state tree and dispatch function that is going to be used by a resource mapper.
 
 A component wrapper that allows to show alternative content if async children
 can't render their content in defined time frame.
+
+## Examples
+
+In `examples` folder you can find [Reddit API Example][reddit-example] which is
+basically an [original advanced example][reddit-example-original] improved by
+`redux-suspense`. In addition, [Basic Example][basic-example] shows the minimal
+code implementation with tests.
+
+ [reddit-example]: https://github.com/alexeyraspopov/redux-suspense/tree/master/examples/reddit
+ [reddit-example-original]: https://redux.js.org/advanced/example-reddit-api
+ [basic-example]: https://github.com/alexeyraspopov/redux-suspense/tree/master/examples/basic
