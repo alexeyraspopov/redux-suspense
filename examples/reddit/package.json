@@ -1,0 +1,22 @@
+{
+  "name": "reddit",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-fetch": "^2.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-suspense": "^0.0.4",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  }
+}
