@@ -21,10 +21,10 @@ export function connectSuspense(coroutine) {
             if (effect instanceof Promise) {
               trigger(true);
               effect.then(() => trigger(false), () => trigger(false));
-            } else {
-              throw effect;
+              return null;
             }
-            return null;
+
+            throw effect;
           }
         }}
       </PlaceholderContext.Consumer>
