@@ -1,5 +1,8 @@
 # Redux Suspense Reddit API Example
 
+This code example is basically [Reddit API Advanced Example](https://redux.js.org/advanced/example-reddit-api)
+from Redux docs. It was modified to show an alternative approach using Suspense.
+
 Run the example:
 
     npm start
