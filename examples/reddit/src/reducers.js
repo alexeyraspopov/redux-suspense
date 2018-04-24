@@ -17,7 +17,6 @@ function selectedSubreddit(state = 'reactjs', action) {
 
 function posts(
   state = {
-    isFetching: false,
     didInvalidate: false,
     items: [],
     lastUpdated: null,
@@ -31,12 +30,10 @@ function posts(
       });
     case REQUEST_POSTS:
       return Object.assign({}, state, {
-        isFetching: true,
         didInvalidate: false,
       });
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
-        isFetching: false,
         didInvalidate: false,
         items: action.posts,
         lastUpdated: action.receivedAt,
