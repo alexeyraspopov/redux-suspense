@@ -36,6 +36,11 @@ to provide frictionless method to query async data from store.
 Suspense connector is a HOC built on top of `connect()` in order to inject the
 state tree and dispatch function that is going to be used by a resource mapper.
 
+    import { Consumer } from 'redux-suspense';
+
+The same connector as `connectSuspense()` but done with render prop pattern
+instead of higher-order component.
+
     import { Placeholder } from 'redux-suspense';
 
 A component wrapper that allows to show alternative content if async children
