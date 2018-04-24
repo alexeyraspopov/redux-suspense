@@ -11,7 +11,7 @@ function StoreConsumer({ state, dispatch, children }) {
         if (!trigger) {
           return (
             <Placeholder delayMs={0} fallback={null}>
-              <Consumer {...{ state, dispatch, children }} />
+              <StoreConsumer {...{ state, dispatch, children }} />
             </Placeholder>
           );
         }
