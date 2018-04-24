@@ -20,6 +20,7 @@ function posts(
     isFetching: false,
     didInvalidate: false,
     items: [],
+    lastUpdated: null,
   },
   action
 ) {
