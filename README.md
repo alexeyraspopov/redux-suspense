@@ -16,7 +16,7 @@ presence they can dispatch necessary action that triggers data fetching. Once
 data arrived, a containers gets re-rendered assuming that the required data can
 now be read from the store.
 
-When using `redux-suspense`, components reads data from the store in the same
+When using `redux-suspense`, components read data from the store in the same
 synchronous way as before. If data is not available (not yet fetched) in the
 rendering phase, an "effect" is thrown out of component so React suspends the
 render till the effect (scheduled data fetching) is complete. After, React
