@@ -25,6 +25,10 @@ export class Placeholder extends Component {
     }
   }
 
+  componentDidUnmount() {
+    clearTimeout(this.state.timer);
+  }
+
   render() {
     return (
       <PlaceholderContext.Provider value={this.trigger}>
