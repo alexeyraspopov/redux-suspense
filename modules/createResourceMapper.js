@@ -13,7 +13,11 @@ export function createResourceMapper(stateMapper, actionDispatcher, shouldDispat
     return stateMapper(state, ...variables);
   }
 
-  return { read, peek };
+  function preload(dispatch, ...variables) {
+    return actionDispatcher(dispatch, ...variables);
+  }
+
+  return { read, peek, preload };
 }
 
 function isNullable(value) {
