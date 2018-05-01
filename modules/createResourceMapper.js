@@ -1,12 +1,11 @@
 export function createResourceMapper(stateMapper, actionDispatcher, shouldDispatch = isNullable) {
   function read(state, dispatch, ...variables) {
     let results = stateMapper(state, ...variables);
+    return shouldDispatch(results) ? doDispatch(dispatch, variables) : results;
+  }
 
-    if (shouldDispatch(results)) {
-      throw actionDispatcher(dispatch, ...variables);
-    }
-
-    return results;
+  function doDispatch(dispatch, variables) {
+    throw actionDispatcher(dispatch, ...variables);
   }
 
   function peek(state, ...variables) {
