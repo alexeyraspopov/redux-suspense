@@ -2,7 +2,11 @@ import React from 'react';
 import { Placeholder, PlaceholderContext } from './Placeholder';
 import { connect } from 'react-redux';
 
-export let Consumer = connect(state => ({ state }))(StoreConsumer);
+export let Consumer = connect(stateIdentity)(StoreConsumer);
+
+function stateIdentity(state) {
+  return { state };
+}
 
 function StoreConsumer({ state, dispatch, children }) {
   return (
