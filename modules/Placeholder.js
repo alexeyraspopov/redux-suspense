@@ -25,7 +25,7 @@ export class Placeholder extends Component {
     }
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearTimeout(this.state.timer);
   }
 
